@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.Pharma</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+<!-- Add AOS CSS and JS in head section -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize AOS with smooth animations
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      easing: 'ease-in-out',
+      duration: 1000,
+      once: false,
+      mirror: true,
+      anchorPlacement: 'top-bottom'
+    });
+  });
+</script>
+
+
+</head>
+<body>
+    <div class="wrapper  relative ">
+
+      <div class="wrapper relative ">
+        <!-- Header Navigation -->
+        <header id="head" class="fixed w-full top-0 backdrop-blur-lg shadow-lg z-50 px-4 lg:px-40 xl:px-40">
+            <nav class="container mx-auto flex justify-between items-center py-3">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-[#1B71A1]">
+                    <img class="w-36 lg:w-44" src="assets/arginelogo.png" alt="Argine Logo">
+                </div>
+    
+                <!-- Hamburger Menu for Mobile -->
+                <button id="menuToggle" class="lg:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+    
+                <!-- Desktop Navbar Items -->
+                <ul id="navbar" class="hidden lg:flex space-x-8 items-center text-md">
+                    <li><a href="index.html" class="hover:text-[#0f538b]">Home</a></li>
+                    <li><a href="about.html" class="hover:text-[#0f538b]">About Us</a></li>
+                    <li><a href="#" class="hover:text-[#0f538b]">Products</a></li>
+                    <li><a href="#" class="hover:text-[#0f538b]">Gallery</a></li>
+                    <li><a href="#" class="hover:text-[#0f538b]">News</a></li>
+                    <li><a href="Contactus.html" class="hover:text-[#0f538b]">Contact Us</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden w-full absolute top-full left-0 bg-white shadow-lg">
+                <ul class="flex flex-col space-y-4 p-4">
+                    <li><a href="index.html" class="block hover:text-[#0f538b]">Home</a></li>
+                    <li><a href="CompanyOverview.html" class="block hover:text-[#0f538b]">About Us</a></li>
+                    <li><a href="#" class="block hover:text-[#0f538b]">Products</a></li>
+                    <li><a href="#" class="block hover:text-[#0f538b]">Gallery</a></li>
+                    <li><a href="#" class="block hover:text-[#0f538b]">News</a></li>
+                    <li><a href="Contactus.html" class="block hover:text-[#0f538b]">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <script>
+                function toggleMobileMenu() {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const menuToggle = document.getElementById('menuToggle');
+                    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // Close mobile menu on window resize if screen becomes large
+                window.addEventListener('resize', () => {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (window.innerWidth >= 1024) { // lg breakpoint
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+            
+        </header>
+    
+        <!-- Hero Section -->
+        <div id="hero" class="bgholder px-4 lg:px-20 xl:px-40 w-full">
+            <section class="py-12 md:py-16 lg:py-20" id="home">
+                <div class="container mx-auto flex flex-col-reverse md:flex-row justify-between items-center min-h-[50vh] md:min-h-[80vh] lg:min-h-[100vh]">
+                    <!-- Left Content -->
+                    <div class="w-full md:w-7/12 xl:w-6/12 text-left py-6" data-aos="fade-right" data-aos-duration="1000">
+                        <h1 class="font-light text-[#283779] text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
+                            We're <strong class="font-bold">determined</strong> for your <strong class="font-bold">better life.</strong>
+                        </h1>
+                        <p class="text-md md:text-lg lg:text-xl mt-4 mb-6 text-[#283779]" data-aos="fade-up" data-aos-delay="200">
+                            You can get the care you need 24/7 – be it online or in person. You will be treated by caring specialist doctors.
+                        </p>
+                        <a href="#!" class="btn bg-[#0f538b] text-white rounded-full px-6 py-3 hover:bg-[#1b71a1] transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="400">
+                            Know More
+                        </a>
+                    </div>
+    
+                    <!-- Right Image -->
+                    <div class="w-full md:w-5/12 xl:w-6/12 pt-12 md:pt-0" data-aos="fade-left" data-aos-duration="1000">
+                        <img src="assets/hero.png" alt="hero-header" class="w-full">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    
+
+      <!-- Departments Section -->
+      <section class="py-5" id="departments" data-aos="fade-up" data-aos-duration="1000">
+          <div class="container mx-auto">
+              <div class="flex flex-col">
+                  <div class="w-full py-3 bg-[url('assets/bg-departments.png')] bg-no-repeat bg-top h-36">
+                      <h2 class="text-center text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mt-4 text-[#283779]" data-aos="fade-down" data-aos-delay="200">OUR DEPARTMENTS</h2>
+                  </div>
+              </div>
+          </div>
+      
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 py-5">
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/neurology.png"
+                      alt="Neurology"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/neurology.svg"
+                      alt="Neurology"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">Neurology</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/eye-care.png"
+                      alt="Eye Care"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/eye-care.svg"
+                      alt="Eye Care"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">Eye Care</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/cardiac.png"
+                      alt="Cardiac Care"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/cardiac.svg"
+                      alt="Cardiac Care"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">Cardiac Care</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/heart.png"
+                      alt="Heart Care"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/heart.svg"
+                      alt="Heart Care"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">Heart Care</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="500">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/osteoporosis.png"
+                      alt="Osteoporosis"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/osteoporosis.svg"
+                      alt="Osteoporosis"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">Osteoporosis</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center group" data-aos="fade-up" data-aos-delay="600">
+                <div class="text-center icon-box">
+                  <a class="no-underline flex justify-center flex-col items-center" href="#!">
+                    <!-- Add default image and hover state image -->
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 group-hover:hidden"
+                      src="assets/ent.png"
+                      alt="ENT"
+                    />
+                    <img
+                      class="mb-3 deparment-icon transition-transform duration-300 hidden group-hover:block"
+                      src="assets/ent.svg"
+                      alt="ENT"
+                    />
+                    <!-- Update text color on hover -->
+                    <p class="text-lg md:text-2xl text-gray-400 group-hover:text-[#1B71A1]">ENT</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <!-- department done  -->
+
+
+      <!-- Container -->
+      <section class="bg-[#1B71A1] relative h-[70vh] my-20" data-aos="fade-up" data-aos-duration="1000">
+        <div class="absolute inset-0 bg-center bg-contain bg-no-repeat" style="background-image: url('assets/bg-eye-care.png');"></div>
+        <!-- Background Image -->
+
+        <div class="container mx-auto relative">
+            <div class="flex flex-col md:flex-row justify-evenly items-center pt-9">
+                <div class="py-4" data-aos="fade-right" data-aos-delay="200">
+                  <img src="assets/eye-care1.png" alt="" class="w-[600px] rounded" >
+                  <!-- <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                </div>
+                <div class="mt-4 lg:mt-0" data-aos="fade-left" data-aos-delay="400">
+                  <h2 class="font-bold text-3xl text-white mb-4 mt-4 lg:mt-0">
+                    Welcome to Argine Pharmaceuticals Private Limited
+                  </h2>
+                  <p class="text-white">               
+                    Your trusted partner in innovative healthcare solutions. <br>
+                    At Argine Pharmaceuticals, we are committed to improving lives by delivering high-quality, <br>affordable pharmaceutical products. Explore our comprehensive product range <br>and discover how we make a difference in healthcare.
+                  </p>
+                  <div class="py-3">
+                      <a class="hovered btn btn-lg bg-white text-[#1B71A1] rounded-full px-6 py-2 inline-block" href="#!" role="button">
+                          Learn more
+                      </a>
+                  </div>
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 text-left">
+                    <!-- Products -->
+                    <div class="flex flex-col items-start" data-aos="zoom-in" data-aos-delay="200">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="#2488c5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                      <h3 class="text-white text-3xl font-bold mb-1">
+                        <span class="counter" data-target="300">0</span>+
+                      </h3>
+                      <p class="text-white text-sm">Products</p>
+                    </div>
+
+                    <!-- Markets -->
+                    <div class="flex flex-col items-start" data-aos="zoom-in" data-aos-delay="400">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="#2488c5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                      </svg>
+                      <h3 class="text-white text-3xl font-bold mb-1">
+                        <span class="counter" data-target="50">0</span>+
+                      </h3>
+                      <p class="text-white text-sm">Markets Served</p>
+                    </div>
+
+                    <!-- Employees -->
+                    <div class="flex flex-col items-start" data-aos="zoom-in" data-aos-delay="600">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="#2488c5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                      <h3 class="text-white text-3xl font-bold mb-1">
+                        <span class="counter" data-target="2000">0</span>+
+                      </h3>
+                      <p class="text-white text-sm">Employees</p>
+                    </div>
+
+                    <!-- SKUs -->
+                    <div class="flex flex-col items-start" data-aos="zoom-in" data-aos-delay="800">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="#2488c5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                      <h3 class="text-white text-3xl font-bold mb-1">
+                        <span class="counter" data-target="1500">0</span>+
+                      </h3>
+                      <p class="text-white text-sm">SKUs</p>
+                    </div>
+                  </div>
+
+                  <script>
+                    const counters = document.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                      const target = +counter.getAttribute('data-target');
+                      const duration = 2000; // 2 seconds
+                      const increment = target / (duration / 16); // 60 FPS
+
+                      function updateCount() {
+                        const count = +counter.innerText;
+                        if (count < target) {
+                          counter.innerText = Math.ceil(Math.min(count + increment, target));
+                          setTimeout(updateCount, 16);
+                        }
+                      }
+
+                      const observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting) {
+                          updateCount();
+                          observer.unobserve(counter);
+                        }
+                      });
+
+                      observer.observe(counter);
+                    });
+                  </script>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- container done  -->
+
+      <!-- Directors Section -->
+      <section class="py-20 px-4 lg:mx-40">
+        <div class="container mx-auto">
+          <div class="py-3 bg-[url('assets/bg-departments.png')] bg-no-repeat bg-top h-36">
+            <h2 class="text-center text-center text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mt-4 text-[#283779] mb-16" data-aos="fade-down" data-aos-duration="1000">OUR LEADERSHIP</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Director 1 -->
+            <div class="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+              <div class="aspect-w-3 aspect-h-4">
+                <img src="assets/director1.jpeg" alt="Director 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white">
+                <h3 class="text-2xl font-semibold text-[#1B71A1] group-hover:text-[#2488c5] transition-colors duration-300">John Doe</h3>
+                <p class="text-gray-600 mt-1">Managing Director</p>
+                <p class="mt-4 text-gray-700 group-hover:opacity-100 transition-opacity duration-300">
+                  "Our vision is to revolutionize healthcare through innovation and accessibility, ensuring better health outcomes for all."
+                </p>
+              </div>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+              <div class="aspect-w-3 aspect-h-4">
+                <img src="assets/director2.jpeg" alt="Director 2" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white">
+                <h3 class="text-2xl font-semibold text-[#1B71A1] group-hover:text-[#2488c5] transition-colors duration-300">Jane Smith</h3>
+                <p class="text-gray-600 mt-1">Technical Director</p>
+                <p class="mt-4 text-gray-700 group-hover:opacity-100 transition-opacity duration-300">
+                  "We strive for excellence in pharmaceutical manufacturing, maintaining the highest quality standards in every product."
+                </p>
+              </div>
+            </div>
+
+            <!-- Director 3 -->
+            <div class="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+              <div class="aspect-w-3 aspect-h-4">
+                <img src="assets/director3.jpeg" alt="Director 3" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white">
+                <h3 class="text-2xl font-semibold text-[#1B71A1] group-hover:text-[#2488c5] transition-colors duration-300">Robert Wilson</h3>
+                <p class="text-gray-600 mt-1">Research Director</p>
+                <p class="mt-4 text-gray-700 group-hover:opacity-100 transition-opacity duration-300">
+                  "Through continuous research and development, we aim to create breakthrough solutions for tomorrow's healthcare challenges."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Categories Section -->
+      <section class="relative py-16 overflow-hidden" data-aos="fade-up">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+          <img src="assets/dna_element.png" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full " alt="DNA">
+          
+        </div>
+
+        <div class="container mx-auto px-4">
+          
+            <div class="py-3 bg-[url('assets/bg-departments.png')] bg-no-repeat bg-top h-36">
+            <h2 class="text-center text-center text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mt-4 text-[#283779] mb-16" data-aos="fade-up">OUR PRODUCTS</h2>
+            </div>
+          
+          <div class="flex flex-col lg:flex-row justify-between gap-40">
+            <!-- Consumer Self-Care Products Column -->
+            <div class="lg:w-1/2" data-aos="fade-right">
+              <div class="flex flex-col items-end space-y-8 ">
+                <h3 class="text-2xl font-semibold text-[#1B71A1] mb-6">Consumer Self-Care Products - OTC</h3>
+                
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-right">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Pain Management</h4>
+                    <p class="text-gray-600">Effective solutions for various types of pain relief</p>
+                  </div>
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/back-pain.png" class="w-12 h-12" alt="Pain Management">
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-right">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Upper Respiratory</h4>
+                    <p class="text-gray-600">Complete care for respiratory health</p>
+                  </div>
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/respiratory-disease.png" class="w-12 h-12" alt="Respiratory">
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-right">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Digestive Health</h4>
+                    <p class="text-gray-600">Products for digestive system wellness</p>
+                  </div>
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/gastroenterology.png" class="w-12 h-12" alt="Digestive">
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-right">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">VMS</h4>
+                    <p class="text-gray-600">Vitamins, Minerals and Supplements</p>
+                  </div>
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/multivitamin.png" class="w-12 h-12" alt="VMS">
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-right">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Skin Care</h4>
+                    <p class="text-gray-600">Advanced dermatological solutions for healthy skin</p>
+                  </div>
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/skin-care.png" class="w-12 h-12" alt="VMS">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Skin Care & Prescription Products Column -->
+            <div class="lg:w-1/2" data-aos="fade-left">
+              <div class="flex flex-col items-start space-y-8  ">
+                <h3 class="text-2xl font-semibold text-[#1B71A1] mb-6">Prescription - Rx Therapeutic Segments</h3>
+                
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/cardiology.png" class="w-12 h-12" alt="CVS">
+                  </div>
+                  <div class="text-left">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Cardiovascular System (CVS)</h4>
+                    <p class="text-gray-600">Complete heart and circulation care</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/brain.png" class="w-12 h-12" alt="CNS">
+                  </div>
+                  <div class="text-left">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Central Nervous System (CNS)</h4>
+                    <p class="text-gray-600">Neurological health solutions</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/dna.png" class="w-12 h-12" alt="Oncology">
+                  </div>
+                  <div class="text-left">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Oncology</h4>
+                    <p class="text-gray-600">Advanced cancer treatment solutions</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/blood-test.png" class="w-12 h-12" alt="Diabetes">
+                  </div>
+                  <div class="text-left">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Anti-Diabetics</h4>
+                    <p class="text-gray-600">Diabetes management medications</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group transition-all duration-300 hover:-translate-y-1">
+                  <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg group-hover:bg-[#1B71A1] transition-colors duration-300">
+                    <img src="assets/antibiotics.png" class="w-12 h-12" alt="Antibiotic">
+                  </div>
+                  <div class="text-left">
+                    <h4 class="text-xl text-[#1B71A1] font-medium mb-2">Anti Biotic</h4>
+                    <p class="text-gray-600">Broad spectrum antibiotic treatments</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- swiper -->
+      <!-- Import Swiper CSS and JS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+      <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl text-center font-semibold text-[#283779] mb-8">Latest News</h2>
+          
+          <div class="relative max-w-4xl mx-auto px-12"> <!-- Added wrapper with padding for arrows -->
+            <!-- Slider main container -->
+            <div class="swiper mySwiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="assets/1.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/3.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/4.jpg" alt="Gallery Image 4" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/5.jpg" alt="Gallery Image 5" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/6.jpg" alt="Gallery Image 5" class="w-full h-64 object-cover rounded-lg">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Navigation buttons - positioned absolutely relative to wrapper -->
+            <div class="swiper-button-next text-[#1B71A1] !-right-10"></div>
+            <div class="swiper-button-prev text-[#1B71A1] !-left-10"></div>
+          </div>
+          
+          <!-- Pagination - outside wrapper -->
+          <div class="swiper-pagination !relative !bottom-0 mt-6"></div>
+        </div>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+              640: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            },
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+          });
+        </script>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
+            
+            <!-- Logo Section -->
+            <div class="md:w-1/6">
+              <img src="assets/arginelogowhite.png" alt="">
+            </div>
+
+            <!-- Links Section -->
+            <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <!-- About Us -->
+              <div>
+                <h3 class="font-semibold text-lg mb-3 ">About us</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="hover:underline">Leadership team</a></li>
+                  <li><a href="#" class="hover:underline">Office of the Chief Medical Officer</a></li>
+                  <li><a href="#" class="hover:underline">Announcements</a></li>
+                  <li><a href="#" class="hover:underline">Media Center</a></li>
+                </ul>
+              </div>
+
+              <!-- Our Commitments -->
+              <div>
+                <h3 class="font-semibold text-lg mb-3">Our commitments</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="hover:underline">Code of Business Conduct</a></li>
+                  <li><a href="#" class="hover:underline">Environment, social, governance</a></li>
+                  <li><a href="#" class="hover:underline">Sustainability</a></li>
+                </ul>
+              </div>
+
+              <!-- Get in Touch -->
+              <div>
+                <h3 class="font-semibold text-lg mb-3">Get in touch</h3>
+                <ul class="space-y-1">
+                  <li><a href="#" class="hover:underline">Contact us</a></li>
+                </ul>
+                <div class="flex space-x-3 mt-4">
+                  <!-- Social Icons -->
+                  <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+
+          <!-- Footer Bottom -->
+          <div class="mt-10 flex flex-col sm:flex-row justify-between items-center border-t border-gray-700 pt-4 text-sm">
+            <p>&copy; 2025 ARGINE Pharmaceuticals Pvt. Ltd. , Inc.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+              <a href="#" class="hover:underline">Careers</a>
+              <a href="#" class="hover:underline">Investors</a>
+              <a href="#" class="hover:underline">Privacy Policy</a>
+              <a href="#" class="hover:underline">Terms of Use</a>
+              <a href="#" class="hover:underline">Cookies Settings</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Button -->
+        <a href="https://wa.me/">
+          <button class="hovered fixed bottom-24 right-6 bg-[#1B71A1] p-3 rounded-full text-white hover:bg-[#1B71A4] focus:outline-none shadow-lg">
+            <i class="fa-brands fa-whatsapp" style="color: #09c341; font-size: 1.6rem; " class=""></i>
+          </button>
+        </a>
+      <a href="#hero">
+        <button class="hovered fixed bottom-6 right-6 bg-[#1B71A1] p-3 rounded-full text-white hover:bg-[#1B71A4] focus:outline-none shadow-lg">
+          <span class="sr-only">Back to Top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+          </svg>
+        </button>
+      </a>
+      </footer>
+       
+    <!-- <script src="script.js"></script> -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</body>
+</html>

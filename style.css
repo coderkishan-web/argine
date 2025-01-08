@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+h2, h3, h4, h5, h6 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.elemhoverclass{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -350px;
+    
+}
+.headofnav:hover{
+    background-color: #2196F3 !important;
+}
+
+  
+  .elemparenthoverclass:hover .elemhoverclass,
+  .elemhoverclass:hover {
+    display: block;
+  }
+  header nav ul li a{
+    color: #283779;
+    text-decoration: none;
+  }
+  header nav ul li a:hover{
+    font-weight: 600;
+  }
+  .dropper li:hover{
+    border-bottom: 2px solid white;
+  }
+
+  @keyframes dropdown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-dropdown {
+    animation: dropdown 0.3s forwards;
+}
+
+
+[data-carousel-item] {
+    transition: opacity 0.4s ease-in-out; /* Smooth transition for opacity */
+}
+.opacity-0 {
+    opacity: 0; /* Invisible */
+    height: 0; 
+    overflow: hidden; 
+}
+.opacity-100 {
+    opacity: 1; /* Fully visible */
+}
+.bgholder{
+    background-image: url(assets/hero-bg.png);
+    background-position: top center;
+    background-size: cover;
+}
+
+
+.hovered:hover{
+    scale: 0.9;
+    background-color: #1B71A1;
+    
+    
+
+}
